@@ -1,5 +1,5 @@
 import React, { component, Component } from 'react'
-import { View, Text, StyleSheet, TouchableOpacity, Image, Button } from 'react-native'
+import { View, Text, StyleSheet, ImageBackground, TouchableOpacity, Image, Button } from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { Input } from 'react-native-elements';
 
@@ -7,11 +7,11 @@ import { Input } from 'react-native-elements';
 class InicioCook extends Component {
 
   //Funciones
-  entrar = () => {
-    this.props.navigation.navigate('InicioAdmin')
-  }
   atras = () => {
-    this.props.navigation.navigate('Ingresa')
+    this.props.navigation.navigate('Ingresa') 
+  }
+  entrar = () => {
+    this.props.navigation.navigate('UserInicio')
   }
 
 
@@ -21,50 +21,63 @@ class InicioCook extends Component {
   render() {
     return (
       <View style={styles.contenido}>
+        <ImageBackground style={styles.fondoimagen}
+source={require('../assets/fondo.jpg')}
+>
+<View style={styles.container}>
 
         <View>
           <Text style={styles.titulo}>
             Registrate
-        </Text>
+          </Text>
         </View>
 
 
         <View style={styles.login}>
-
+          <View style={styles.centro}>
           <Input
-            placeholder='Ingrese Usuario'
-            leftIcon={
-              <Icon
-                name='user'
-                size={24}
-                color='black'
-              />
-            }
-          />
-          <Input placeholder='Ingrese Nombre' color='black' size={24}   />
-          <Input placeholder='Ingrese Apellido' color='black' size={24}   />
+              placeholder='Imagen (Nombre.jpg)'
 
-          <Input placeholder="Ingrese Contraseña" secureTextEntry={true} />
+            />
+            <Input
+              placeholder='Ingrese Nombre'
+
+            />
+            <Input
+              placeholder='Ingrese Apellido'
+
+            />
+            <Input
+              placeholder='Ingrese Usuario'
+
+            />
+
+            <Input placeholder="Ingrese Contraseña" />
+
+
+            <Button
+              style={styles.botones}
+              title="Crear"
+              color="orange"
+
+              onPress={this.entrar} />
+
+            <Button
+              style={styles.botones}
+              title="Atras"
+              color="#1C65AE"
+
+              onPress={this.atras} />
+
+
+            
+          </View>
+          </View>
           
-          
-          <Button
-            style={styles.botones}
-            title="Crear"
-            color="orange"
-
-            onPress={this.entrar} />
-
-          <Button
-            style={styles.botones}
-            title="Atras"
-            color="#1C65AE"
-
-            onPress={this.atras} />
-
-
-
+          </View>
+        
+          </ImageBackground>
         </View>
-      </View>
     )
   }
 }
@@ -73,18 +86,44 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     backgroundColor: 'black',
-    alignItems: "center",
+    
 
 
+},
+container:{
+    flex: 1,
+    flexDirection: 'column',
+    alignItems:'center',
+    
+},
+
+  fondoimagen: {
+    flex: 1,
+    resizeMode: "cover",
+    justifyContent: "center"
   },
+  
   login: {
+          marginTop:20,
+    
+    
+    flexDirection: 'row',
     backgroundColor: 'white',
-    margin: 50,
+
   },
+  centro: {
+    
+flex:1,
+
+flexDirection: 'column',
+
+
+},
+
 
   titulo: {
 
-    fontSize: 50,
+          fontSize: 50,
     color: 'white',
     fontStyle: 'italic',
 

@@ -1,5 +1,5 @@
 import React, { component, Component } from 'react'
-import { View, Text, StyleSheet,ImageBackground,  TouchableOpacity, Image, Button } from 'react-native'
+import { View, Text, StyleSheet, TouchableOpacity,ImageBackground ,Image, Button } from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { Input } from 'react-native-elements';
 import { ScrollView } from 'react-native-gesture-handler';
@@ -10,14 +10,9 @@ class InicioCook extends Component {
     //Funciones
 
     atras = () => {
-        this.props.navigation.navigate('AdminRecet')
+        this.props.navigation.navigate('UserInicio')
     }
-    nuevo = () => {
-        this.props.navigation.navigate('Nuevo')
-    }
-    modif = () => {
-        this.props.navigation.navigate('Modificar')
-    }
+    
 
 
 
@@ -37,7 +32,7 @@ source={require('../../assets/fondo.jpg')}
                     <Button
                         style={styles.botones}
                         title="Atras"
-                        color="red"
+                        color="orange"
 
                         onPress={this.atras} />
 
@@ -47,12 +42,7 @@ source={require('../../assets/fondo.jpg')}
                     <Text style={styles.titulo}>
                         Comidas
                     </Text>
-                    <Button
-                                style={styles.botones}
-                                title="Agregar"
-                                color="green" 
-
-                                onPress={this.nuevo} />
+                    
                 </View>
 
                 <View style={styles.comidas}>
@@ -74,26 +64,7 @@ source={require('../../assets/fondo.jpg')}
                         on Diana. Descubre Cosas Nuevas.
                          </Text>
                     <View style={styles.contenidoBotones} >
-                        <View>
-
-                            <Button
-                                style={styles.botones}
-                                title="Modificar"
-                                color="blue"
-
-                                onPress={this.modif} />
-
                         </View>
-
-                        <View>
-                            <Button
-                                style={styles.botones}
-                                title="Eliminar"
-                                color="red"
-
-                                onPress={this.recet} />
-                        </View>
-                    </View>
 
                 </View>
                 
@@ -121,26 +92,6 @@ source={require('../../assets/fondo.jpg')}
                          </Text>
                          
                     <View style={styles.contenidoBotones} >
-                        <View>
-
-                            <Button
-                                style={styles.botones}
-                                title="Modificar"
-                                color="blue"
-
-                                onPress={this.modif} />
-
-                        </View>
-                        
-
-                        <View>
-                            <Button
-                                style={styles.botones}
-                                title="Eliminar"
-                                color="red"
-
-                                onPress={this.recet} />
-                        </View>
                     </View>
 
                 </View>
@@ -168,26 +119,7 @@ source={require('../../assets/fondo.jpg')}
                          </Text>
                          
                     <View style={styles.contenidoBotones} >
-                        <View>
-
-                            <Button
-                                style={styles.botones}
-                                title="Modificar"
-                                color="blue"
-
-                                onPress={this.modif} />
-
-                        </View>
                         
-
-                        <View>
-                            <Button
-                                style={styles.botones}
-                                title="Eliminar"
-                                color="red"
-
-                                onPress={this.recet} />
-                        </View>
                     </View>
 
                 </View>
@@ -215,26 +147,7 @@ source={require('../../assets/fondo.jpg')}
                          </Text>
                          
                     <View style={styles.contenidoBotones} >
-                        <View>
-
-                            <Button
-                                style={styles.botones}
-                                title="Modificar"
-                                color="blue"
-
-                                onPress={this.modif} />
-
-                        </View>
                         
-
-                        <View>
-                            <Button
-                                style={styles.botones}
-                                title="Eliminar"
-                                color="red"
-
-                                onPress={this.recet} />
-                        </View>
                     </View>
 
                 </View>
@@ -262,36 +175,16 @@ source={require('../../assets/fondo.jpg')}
                          </Text>
                          
                     <View style={styles.contenidoBotones} >
-                        <View>
-
-                            <Button
-                                style={styles.botones}
-                                title="Modificar"
-                                color="blue"
-
-                                onPress={this.modif} />
-
-                        </View>
                         
-
-                        <View>
-                            <Button
-                                style={styles.botones}
-                                title="Eliminar"
-                                color="red"
-
-                                onPress={this.recet} />
-                        </View>
                     </View>
 
                 </View> 
 
 
 
-
                 </View>
-        
-        </ImageBackground>
+                
+                </ImageBackground>
 
 
             </View>
@@ -303,10 +196,10 @@ const styles = StyleSheet.create({
     contenido: {
         flex: 1,
         flexDirection: 'column',
+        backgroundColor: 'black',
         
-        
-    
-    
+
+
     },
     container:{
         flex: 1,
@@ -314,13 +207,12 @@ const styles = StyleSheet.create({
         alignItems:'center',
         
     },
-    
-      fondoimagen: {
+    fondoimagen: {
         flex: 1,
         resizeMode: "cover",
         justifyContent: "center"
       },
-   
+    
     contenidoBotones: {
         flex: 0.5,
         flexDirection: 'row',

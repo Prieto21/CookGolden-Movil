@@ -1,5 +1,5 @@
 import React, { component, Component } from 'react'
-import { View, Text, StyleSheet, ImageBackground, TouchableOpacity, Image, Button } from 'react-native'
+import { View, Text, StyleSheet, TouchableOpacity, Image ,ImageBackground  ,  Button } from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { Input } from 'react-native-elements';
 
@@ -7,14 +7,17 @@ import { Input } from 'react-native-elements';
 class InicioCook extends Component {
 
     //Funciones
-    user = () => {
-        this.props.navigation.navigate('AdminUser')
+    comida = () => {
+        this.props.navigation.navigate('UserComidas')
+    }
+    bebida = () => {
+        this.props.navigation.navigate('UserBebidas')
     }
     atras = () => {
         this.props.navigation.navigate('Ingresa')
     }
-    recet = () => {
-        this.props.navigation.navigate('AdminRecet')
+    postre = () => {
+        this.props.navigation.navigate('UserPostres')
     }
 
 
@@ -24,11 +27,10 @@ class InicioCook extends Component {
     render() {
         return (
             <View style={styles.contenido}>
-                <ImageBackground style={styles.fondoimagen}
+<ImageBackground style={styles.fondoimagen}
 source={require('../../assets/fondo.jpg')}
 >
 <View style={styles.container}>
-
                 <View style={styles.bloqueuno}>
                     <Button
                         style={styles.botones}
@@ -44,39 +46,46 @@ source={require('../../assets/fondo.jpg')}
                         Bienvenido
         </Text>
                 </View>
+                <View style={styles.bloquecuatro}>
+                <Image
+                  style={styles.tinyLogo}
+                  source={require('../../assets/logo.jpg')}
+               />
+               
+                </View>
+                <View>
+                <Button
+                        style={styles.botones}
+                        title="Bebidas"
+                        color="orange"
+
+                        onPress={this.bebida} />
+                </View>
                 <View style={styles.contenidos}>
+                    
                     <View style={styles.subbloque}>
                     
                     <Button
                         style={styles.botones}
-                        title="Usuarios"
-                        color="gray"
+                        title="Comidas"
+                        color="orange"
 
-                        onPress={this.user} />
+                        onPress={this.comida} />
         
                     </View>
                     
                     <View style={styles.subbloqueuno}>
                     <Button
                         style={styles.botones}
-                        title="Recetas"
-                        color="gray"
+                        title="Postres"
+                        color="orange"
 
-                        onPress={this.recet} /> 
+                        onPress={this.postre} /> 
                     </View>
                 </View>
-                <View style={styles.bloquecuatro}>
-                <Image
-                  style={styles.tinyLogo}
-                  source={require('../../assets/logo.jpg')}
-               />
-                    <Text style={styles.titulo}>
-                        Tenga Un Buen Dia
-        </Text>
                 </View>
-                </View>
-        
-        </ImageBackground>
+                
+                </ImageBackground>
             </View>
         )
     }
@@ -85,10 +94,10 @@ const styles = StyleSheet.create({
     contenido: {
         flex: 1,
         flexDirection: 'column',
+        backgroundColor: 'black',
         
-        
-    
-    
+
+
     },
     container:{
         flex: 1,
@@ -96,13 +105,17 @@ const styles = StyleSheet.create({
         alignItems:'center',
         
     },
-    
-      fondoimagen: {
+    fondoimagen: {
         flex: 1,
         resizeMode: "cover",
         justifyContent: "center"
       },
-      
+    subbloque:{
+
+        flex:0.5,
+        flexDirection:'row'
+    },
+    
     contenidos: {
         flex: 0.5,
         flexDirection: 'row',
@@ -113,6 +126,7 @@ const styles = StyleSheet.create({
     },
     bloqueuno: {
         flex: 0.3,
+        
 
 
 
@@ -125,12 +139,12 @@ const styles = StyleSheet.create({
     tinyLogo: {
         width: 250,
         height: 250,
-        borderRadius:45,
+        borderRadius:40,
         
       },
     
     bloquecuatro: {
-        flex: 2,
+        flex: 1,
         alignItems:'center'
     },
 

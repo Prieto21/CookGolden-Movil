@@ -1,5 +1,5 @@
 import React, { component, Component } from 'react'
-import { View, Text, StyleSheet, TouchableOpacity, Image, Button } from 'react-native'
+import { View, Text, StyleSheet, TouchableOpacity, Image, Button, ImageBackground } from 'react-native'
 
 
 class InicioCook extends Component {
@@ -13,8 +13,11 @@ class InicioCook extends Component {
    //Cierre De Funciones
    render() {
       return (
-         <View style={styles.contenido}>
-
+ 
+         <View style={styles.container}>
+<ImageBackground style={styles.fondoimagen}
+source={require('../assets/fondo.jpg')}
+>
             <View style={styles.alto}>
                <Text style={styles.titulo}>Cook Golden</Text>
             </View>
@@ -38,24 +41,32 @@ class InicioCook extends Component {
 
 
             </View>
-
+            </ImageBackground>
          </View>
+
       )
 
    }
 }
 const styles = StyleSheet.create({
-   contenido: {
+   container: {
       flex: 1,
       flexDirection: 'column',
       backgroundColor: 'black',
+ 
 
    },
+   fondoimagen: {
+      flex: 1,
+      resizeMode: "cover",
+      justifyContent: "center"
+    },
+
    tinyLogo: {
       width: 250,
       height: 250,
-      
-    },
+      borderRadius: 45,
+   },
    alto: {
       flex: 1,
       alignItems: 'center',
@@ -74,7 +85,7 @@ const styles = StyleSheet.create({
 
    medio: {
       flex: 1.8,
-alignItems:'center'
+      alignItems: 'center'
    },
    bajo: {
       flex: 2,

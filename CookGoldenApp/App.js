@@ -10,17 +10,42 @@ import InicioAdmin  from './src/Admin/Inicio';
 import AdminUser  from './src/Admin/Usuarios';
 import AdminRecet  from './src/Admin/Recetas';
 import AdminComidas  from './src/Admin/Comidas';
+import AdminBebidas  from './src/Admin/Bebidas';
+import AdminPostres  from './src/Admin/Postres';
+import Agregar  from './src/Admin/NuevoRece';
+import Modificar  from './src/Admin/Modificar';
+import UserInicio  from './src/Usuarios/Inicio';
+import UserComidas  from './src/Usuarios/Comidas';
+import UserPostres  from './src/Usuarios/Postres';
+import UserBebidas  from './src/Usuarios/Bebidas';
 
 const InicioNavigator = createStackNavigator({
    Bienvenido:{
      screen: Inicio
      
    },
+   UserInicio:{
+    screen: UserInicio,
+    
+   },
    Ingresa:{
     screen: Login,
     
    },
-   Nuevo:{
+   
+   UserComidas:{
+    screen: UserComidas,
+    
+   },
+   UserPostres:{
+    screen: UserPostres,
+    
+   },
+   UserBebidas:{
+    screen: UserBebidas,
+    
+   },
+   regis:{
     screen:Registro,
    },
    InicioAdmin:{
@@ -36,6 +61,18 @@ const InicioNavigator = createStackNavigator({
 
    AdminComidas:{
     screen:AdminComidas,
+   },
+   AdminBebidas:{
+    screen:AdminBebidas,
+   },
+   AdminPostres:{
+    screen:AdminPostres,
+   },
+   Nuevo:{
+    screen:Agregar,
+   },
+   Modificar:{
+    screen:Modificar,
    },
    
 });

@@ -1,7 +1,8 @@
 import React, { component, Component } from 'react'
-import { View, Text, StyleSheet, TouchableOpacity, Image, Button } from 'react-native'
+import { View, Text, StyleSheet, ImageBackground,TouchableOpacity, Image, Button } from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { Input } from 'react-native-elements';
+import { ScrollView } from 'react-native-gesture-handler';
 
 
 class InicioCook extends Component {
@@ -23,7 +24,12 @@ class InicioCook extends Component {
 
     render() {
         return (
+            <ScrollView>
             <View style={styles.contenido}>
+            <ImageBackground style={styles.fondoimagen}
+source={require('../../assets/fondo.jpg')}
+>
+<View style={styles.container}>
 
                 <View style={styles.bloqueuno}>
                     <Button
@@ -64,9 +70,62 @@ class InicioCook extends Component {
                 <View style={styles.bloquecuatro}>
                     
                     
+                    <View style={styles.users}>
+                        <Image
+                            style={styles.tinyLogo}
+                            source={require('../../assets/perfil.jpg')}
+                        />
+                        <Text>Nombre</Text>
+                        <Text>Sergio</Text>
+                        <Text>Apellido</Text>
+                        <Text>Prieto</Text>
+                        <Text>Usuario</Text>
+                        <Text>Prieto21</Text>
+                        <Text>Contraseña</Text>
+                        <Text>123</Text>
+
+
+                    </View>
+                    <View style={styles.users}>
+                        <Image
+                            style={styles.tinyLogo}
+                            source={require('../../assets/perfil.jpg')}
+                        />
+                        <Text>Nombre</Text>
+                        <Text>Sergio</Text>
+                        <Text>Apellido</Text>
+                        <Text>Prieto</Text>
+                        <Text>Usuario</Text>
+                        <Text>Prieto21</Text>
+                        <Text>Contraseña</Text>
+                        <Text>123</Text>
+
+
+                    </View>
+                   
+                    <View style={styles.users}>
+                        <Image
+                            style={styles.tinyLogo}
+                            source={require('../../assets/perfil.jpg')}
+                        />
+                        <Text>Nombre</Text>
+                        <Text>Sergio</Text>
+                        <Text>Apellido</Text>
+                        <Text>Prieto</Text>
+                        <Text>Usuario</Text>
+                        <Text>Prieto21</Text>
+                        <Text>Contraseña</Text>
+                        <Text>123</Text>
+
+
+                    </View>
                 </View>
 
+                </View>
+        
+        </ImageBackground>
             </View>
+            </ScrollView>
         )
     }
 }
@@ -74,15 +133,35 @@ const styles = StyleSheet.create({
     contenido: {
         flex: 1,
         flexDirection: 'column',
-        backgroundColor: 'black',
-        alignItems: "center",
-
-
+        
+        
+    
+    
+    },
+    container:{
+        flex: 1,
+        flexDirection: 'column',
+        alignItems:'center',
+        
+    },
+    
+      fondoimagen: {
+        flex: 1,
+        resizeMode: "cover",
+        justifyContent: "center"
+      },
+   
+    users: {
+        flex: 2,
+        flexDirection: 'column',
+        alignItems: 'center',
+        backgroundColor: 'white',
+        
     },
     contenidos: {
         flex: 0.5,
         flexDirection: 'row',
-        backgroundColor: 'black',
+        
         alignItems: "center",
 
 
@@ -107,6 +186,7 @@ const styles = StyleSheet.create({
     bloquecuatro: {
         flex: 2,
         alignItems: 'center'
+        
     },
 
     titulo: {

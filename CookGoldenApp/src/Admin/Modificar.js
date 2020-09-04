@@ -1,5 +1,5 @@
 import React, { component, Component } from 'react'
-import { View, Text, StyleSheet, TouchableOpacity, Image, Button, ImageBackground } from 'react-native'
+import { View, Text, StyleSheet, ImageBackground, TouchableOpacity, Image, Button } from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { Input } from 'react-native-elements';
 
@@ -7,14 +7,9 @@ import { Input } from 'react-native-elements';
 class InicioCook extends Component {
 
   //Funciones
-  registro = () => {
-    this.props.navigation.navigate('regis') 
-  }
-  entrar = () => {
-    this.props.navigation.navigate('UserInicio')
-  }
-  entrarAdmin = () => {
-    this.props.navigation.navigate('InicioAdmin')
+  
+  atras = () => {
+    this.props.navigation.navigate('AdminRecet')
   }
 
 
@@ -24,53 +19,58 @@ class InicioCook extends Component {
   render() {
     return (
       <View style={styles.contenido}>
-<ImageBackground style={styles.fondoimagen}
-source={require('../assets/fondo.jpg')}
+        <ImageBackground style={styles.fondoimagen}
+source={require('../../assets/fondo.jpg')}
 >
 <View style={styles.container}>
+
         <View>
           <Text style={styles.titulo}>
-            Login
+            Modificar
           </Text>
         </View>
 
 
         <View style={styles.login}>
           <View style={styles.centro}>
+          <Input
+              placeholder='Imagen (Nombre.jpg)'
+
+            />
             <Input
-              placeholder='Ingrese Usuario'
+              placeholder='Ingrese Nombre'
 
             />
 
-            <Input placeholder="Ingrese Contraseña" />
+            <Input placeholder="Ingrese Descripción" />
+            <Input
+              placeholder='1-Comidas, 2-Postres, 3-Bebidas'
+              keyboardType='numeric' 
+            />
 
 
             <Button
               style={styles.botones}
-              title="Entrar"
+              title="Guardar"
               color="orange"
 
               onPress={this.entrar} />
 
             <Button
               style={styles.botones}
-              title="Registrarme"
+              title="Atras"
               color="#1C65AE"
 
-              onPress={this.registro} />
+              onPress={this.atras} />
 
 
-            <Button
-              style={styles.botones}
-              title="A"
-              color="gray"
-
-              onPress={this.entrarAdmin} />
+           
           </View>
           </View>
+          
           </View>
         
-          </ImageBackground>
+        </ImageBackground>
         </View>
     )
   }
@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
   contenido: {
     flex: 1,
     flexDirection: 'column',
-    backgroundColor: 'black',
+    
     
 
 
@@ -96,8 +96,9 @@ container:{
     resizeMode: "cover",
     justifyContent: "center"
   },
+
   login: {
-          
+          marginTop:20,
     
     
     flexDirection: 'row',
@@ -115,8 +116,7 @@ flexDirection: 'column',
 
 
   titulo: {
-    
-    
+
           fontSize: 50,
     color: 'white',
     fontStyle: 'italic',

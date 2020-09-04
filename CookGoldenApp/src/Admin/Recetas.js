@@ -1,5 +1,5 @@
 import React, { component, Component } from 'react'
-import { View, Text, StyleSheet, TouchableOpacity, Image, Button } from 'react-native'
+import { View, Text, StyleSheet, ImageBackground,TouchableOpacity, Image, Button } from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { Input } from 'react-native-elements';
 
@@ -19,6 +19,12 @@ class InicioCook extends Component {
     comidas = () => {
         this.props.navigation.navigate('AdminComidas')
     }
+    bebidas = () => {
+        this.props.navigation.navigate('AdminBebidas')
+    }
+    postres = () => {
+        this.props.navigation.navigate('AdminPostres')
+    }
 
 
     //Cierre De Funciones
@@ -27,6 +33,10 @@ class InicioCook extends Component {
     render() {
         return (
             <View style={styles.contenido}>
+                <ImageBackground style={styles.fondoimagen}
+source={require('../../assets/fondo.jpg')}
+>
+<View style={styles.container}>
 
                 <View style={styles.bloqueuno}>
                     <Button
@@ -79,7 +89,7 @@ class InicioCook extends Component {
                             title="Bebidas"
                             color="orange"
 
-                            onPress={this.recet} />
+                            onPress={this.bebidas} />
                     </View>
                     <View style={styles.contenidoBotones}>
                         <Button
@@ -87,11 +97,14 @@ class InicioCook extends Component {
                             title="Postres"
                             color="orange"
 
-                            onPress={this.recet} />
+                            onPress={this.postres} />
                     </View>
 
                 </View>
 
+                </View>
+        
+        </ImageBackground>
             </View>
         )
     }
@@ -100,15 +113,28 @@ const styles = StyleSheet.create({
     contenido: {
         flex: 1,
         flexDirection: 'column',
-        backgroundColor: 'black',
-        alignItems: "center",
-
-
+        
+        
+    
+    
     },
+    container:{
+        flex: 1,
+        flexDirection: 'column',
+        alignItems:'center',
+        
+    },
+    
+      fondoimagen: {
+        flex: 1,
+        resizeMode: "cover",
+        justifyContent: "center"
+      },
+   
     contenidoBotones: {
         flex: 0.5,
         flexDirection: 'column',
-        backgroundColor: 'black',
+        
         alignItems: "center",
 
 
@@ -116,7 +142,7 @@ const styles = StyleSheet.create({
     contenidos: {
         flex: 0.5,
         flexDirection: 'row',
-        backgroundColor: 'black',
+        
         alignItems: "center",
 
 

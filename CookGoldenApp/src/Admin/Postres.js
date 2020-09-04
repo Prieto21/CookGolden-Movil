@@ -45,7 +45,7 @@ source={require('../../assets/fondo.jpg')}
 
                 <View style={styles.bloquedos}>
                     <Text style={styles.titulo}>
-                        Comidas
+                        Postres
                     </Text>
                     <Button
                                 style={styles.botones}
